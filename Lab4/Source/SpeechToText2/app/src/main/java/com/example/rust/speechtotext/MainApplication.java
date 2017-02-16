@@ -1,22 +1,18 @@
 package com.example.rust.speechtotext;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.ImageButton;
-import android.widget.EditText;
-import java.util.ArrayList;
-import org.json.JSONException;
-import org.json.JSONObject;
-import java.io.IOException;
 import android.speech.RecognizerIntent;
-import java.util.Locale;
-import android.content.ActivityNotFoundException;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Locale;
 
 
 public class MainApplication extends AppCompatActivity {
@@ -28,21 +24,17 @@ public class MainApplication extends AppCompatActivity {
 
     protected static final int RESULT_SPEECH = 1;
 
-    private ImageButton btnSpeak;
-    EditText editText;
+    private static Button btnSpeak;
+    private static EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_classify);
-        outputTextView = (TextView) findViewById(R.id.txt_Result);
-        outputTextView1 = (TextView) findViewById(R.id.txt_Result1);
+        setContentView(R.layout.activity_main_application);
 
-        Text = (TextView) findViewById(R.id.Text);
+        editText = (EditText)findViewById(R.id.editText_textarea);
 
-        editText = (EditText)findViewById(R.id.txt_Email);
-
-        btnSpeak = (ImageButton) findViewById(R.id.mic);
+        btnSpeak = (Button) findViewById(R.id.button_speaknow);
         btnSpeak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
