@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_sign_up"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.rust.signupapp.SignUpActivity"
+    android:background="@drawable/page">
+
+    <EditText
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="150dp"
+        android:id="@+id/etUsername"
+        android:layout_width="300dp"
+        android:hint="Username/EmailAddress"
+        android:background="@android:drawable/screen_background_light_transparent"
+        android:layout_height="65dp"
+        android:gravity="center_vertical|center"
+        android:textColorHint="@color/colorPrimary"
+        android:textAlignment="viewStart"
+        android:fontFamily="sans-serif"
+        android:textSize="18sp"
+        android:textStyle="normal|bold"
+        android:textColor="@color/colorPrimary" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="65dp"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/etPassword"
+        android:layout_below="@+id/etUsername"
+        android:layout_alignEnd="@+id/etUsername"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/screen_background_light_transparent"
+        android:hint="Password"
+        android:gravity="center_vertical|center"
+        android:textColorHint="@color/colorPrimary"
+        android:typeface="sans"
+        android:textAllCaps="false"
+        android:textAlignment="viewStart"
+        android:textStyle="normal|bold"
+        android:textColor="@color/colorPrimary" />
+
+    <Button
+        android:text="Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btSignIn"
+        android:layout_alignEnd="@+id/etPassword"
+        android:id="@+id/btLogin"
+        android:background="@color/colorAccent" />
+
+    <Button
+        android:text="SignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:id="@+id/btSignIn"
+        android:layout_below="@+id/etPassword"
+        android:layout_alignStart="@+id/etPassword"
+        android:background="@color/colorPrimaryDark" />
+
+    <TextView
+        android:text="ARCH Enterprise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:id="@+id/textView"
+        android:background="@android:color/transparent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:textColor="@color/colorPrimary" />
+</RelativeLayout>
