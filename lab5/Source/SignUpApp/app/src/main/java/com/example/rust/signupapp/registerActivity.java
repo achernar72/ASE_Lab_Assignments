@@ -4,14 +4,16 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import java.io.ByteArrayOutputStream;
@@ -21,15 +23,28 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class registerActivity extends AppCompatActivity {
+    private static EditText fastname;
+    private static EditText lastname;
+    private static EditText email;
+    private static EditText password;
+    private static EditText repassword;
+    private static EditText phone;
+    private static EditText city;
+    private static EditText address;
+    private static EditText country;
+    private static EditText state;
+    private static Button Register;
+
     private int REQUEST_CAMERA = 0, SELECT_FILE = 1;
     private Button btnSelect;
     private ImageView ivImage;
     private String userChoosenTask;
-
+    private String fName, lName, Email, pass, repass, phon, cit, addr, countr, stat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
         btnSelect = (Button) findViewById(R.id.btnSelectPhoto);
         btnSelect.setOnClickListener(new View.OnClickListener() {
 
@@ -39,7 +54,94 @@ public class registerActivity extends AppCompatActivity {
             }
         });
         ivImage = (ImageView) findViewById(R.id.ivImage);
-    }
+        fastname= (EditText)findViewById(R.id.etfirst);
+         lastname= (EditText)findViewById(R.id.etlast);
+         email= (EditText)findViewById(R.id.etemail);
+         password= (EditText)findViewById(R.id.etPassword);
+         repassword= (EditText)findViewById(R.id.etrepassword);
+        phone= (EditText)findViewById(R.id.etphone);
+        city= (EditText)findViewById(R.id.etCity);
+         address= (EditText)findViewById(R.id.etaddress);
+        country= (EditText)findViewById(R.id.etcountry);
+         state= (EditText)findViewById(R.id.etstate);
+        Register=(Button)findViewById(R.id.btRegister);
+        Register.setOnClickListener(new View.OnClickListener()
+        {
+
+   public void onClick(View v1) {
+        int id = v1.getId();
+        if (id == R.id.ivImage) {
+
+        } else if (id == R.id.btRegister) {
+            if (isValidate()) {
+                SharedPreferences sharedPreferences=getSharedPreferences("REGISTRATION",MODE_PRIVATE);
+                SharedPreferences.Editor editor=sharedPreferences.edit();
+                editor.putString("Name", fName + " " + lName);
+                editor.commit();
+                Intent intent=new Intent(registerActivity.this,GMapsActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        }
+    }});}
+  private boolean isValidate() {
+      fName = fastname.getText().toString();//  private String fName, lName, Email,pass,repass,phon,cit,addr,countr,stat;
+      lName = lastname.getText().toString();
+      Email= email.getText().toString();
+      repass=repassword.getText().toString();
+      pass = password.getText().toString();
+      phon=phone.getText().toString();
+      cit=city.getText().toString();
+      addr=address.getText().toString();
+      countr=country.getText().toString();
+      stat=state.getText().toString();
+      if(fName.equals("")){
+          fastname.setError("Enter first name");
+          fastname.requestFocus();
+          return false;
+      }else if(lName.equals("")){
+          lastname.setError("Enter last name");
+          lastname.requestFocus();
+          return false;
+      }
+      else if(pass.equals("")){
+          password.setError("Enter password");
+          password.requestFocus();
+          return false;
+      }
+      else if(pass!=repass){
+          password.setError("Password doesnt match");
+          password.requestFocus();
+          return false;
+      }else if(Email.equals("")){
+          email.setError("Enter email");
+          email.requestFocus();
+          return false;
+      }
+      else if(phon.equals("")){
+          phone.setError("Enter Phone number");
+          phone.requestFocus();
+          return false;
+      }
+      else if(cit.equals("")){
+          city.setError("Enter your cityr");
+          city.requestFocus();
+          return false;
+      }
+      else if(stat.equals("")){
+          state.setError("Enter your state");
+          state.requestFocus();
+          return false;
+      }
+      else if(countr.equals("")){
+          country.setError("Enter your country");
+          country.requestFocus();
+          return false;
+      }
+      return true;
+  }
+
+
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         switch (requestCode) {
@@ -84,6 +186,7 @@ public class registerActivity extends AppCompatActivity {
         });
         builder.show();
     }
+
 
     private void galleryIntent()
     {

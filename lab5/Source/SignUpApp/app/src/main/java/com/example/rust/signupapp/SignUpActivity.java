@@ -31,7 +31,7 @@ public class SignUpActivity extends AppCompatActivity {
             public void onClick(View v){
                 if(username.getText().toString().equals("aspk4")&&
                         password.getText().toString().equals("aspk4")) {
-                    Intent intent = new Intent("com.example.rust.signupapp.HomePage");
+                    Intent intent = new Intent("com.example.rust.signupapp.Googlemap");
                     startActivity(intent);
                 } else{
                     Toast.makeText(SignUpActivity.this,"user and password is not correct",
