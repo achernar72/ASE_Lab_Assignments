@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>homepage</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="facebook.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+</head>
+
+<!constructing the login and password tiles>
+
+<body oncontextmenu="return false">  <div class="relative">CaPpUcCiNo</div>
+<form name="login">
+    <div class="login">
+        <input type="text" placeholder="username" name="userid"><br>
+        <input type="password" placeholder="password" name="password"><br>
+        <input type="button" onclick="check(this.form)" value="Login"><br></br>
+
+        <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></div>
+    </div>
+    <fb-login-button scope="public_profile,email" onlogin="checkLoginState()">
+    </fb-login-button>
+
+
+</form>
+
+<!java script code for login credentials>
+
+
+
+<script language="javascript">
+    function check(form)
+    {
+        if(form.userid.value =="avi" && form.password.value =="avi")
+        {
+            window.open("home.html")
+        }
+        else
+        {
+            alert("Incorrect password and username")
+        }
+
+
+    }
+
+</script>
+
+</body>
+
+</html>
