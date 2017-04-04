@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=BioRhyme|Black+Ops+One|Bungee|Bungee+Shade|Creepster|Ewert|Fruktur|Gravitas+One|Monoton|Rubik:900');
+
+body{
+    background:url('1.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size:cover ;
+    background-size: cover;
+    font-family: 'Creepster', cursive;
+
+}
+div.relative{
+    position: fixed;
+     left:640px;
+    color: white;
+    font-size: 80px;
+    word-spacing: 3px;
+    letter-spacing: 2px;
+}
+
+.login{
+    position:absolute;
+    top:150px;
+    left:950px;
+    height:150px;
+    position:fixed;
+    width:350px;
+    padding:60px;
+}
+.login input[type=text]{
+    width:350px;
+    height:50px;
+    background:transparent;
+    border:1px solid mintcream;
+    border-radius:2px;
+    color:white;
+    font-size:29px;
+    font-weight:bold;
+    padding:4px;
+       
+}
+.login input[type=password]{
+    width:350px;
+    height:50px;
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.6);
+    border-radius:2px;
+    color:white;
+    font-family:'Exo',sans-serif;
+    font-weight:bold;
+    font-size:29px;
+    font-weight:400;
+    padding:4px;
+       
+}
+.login input[type=button]{
+    width:260px;
+    height:35px;
+    background:white;
+    border:1px solid #fff;
+    cursor:pointer;
+    border-radius:2px;
+    color:#a18d6c;
+    font-family:'Exo',sans-serif;
+    font-family:'Creepster', cursive;
+    font-size:16px;
+    font-weight:400;
+    padding:6px;
+    margin-top:10px;
+       
+}
+
+
+.login input[type=button]:hover{
+    opacity:6.8;
+    
+}
+.login input[type=button]:active{
+    opacity:0.6;
+}
+.login input[type=text]:focus{
+    outline:none;
+    border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=password]:focus{
+    outline:none;
+    border: 1px solid rgba(255,255,255,0.98);
+    
+    
+}
+.login input [type=button]:focus{
+    outline:none;
+}
+::-webkit-input-placeholder{
+    color:rgba(255,255,255,0.6);
+}
+::-moz-input-placeholder{
+    
+   color:rgba(255,255,255,0.6); 
+}
+
+
+.login button[type=button1]{
+    
+    background-image: url(fconnect.png);
+    width:209px;
+    height:38px;
+    
+    
+}
+.login button[type=button2]{
+   background-image: url(gconnect.png);
+    width:200px;
+    height:38px;  
+ 
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
